@@ -1,0 +1,14 @@
+RewriteEngine On
+RewriteBase /PetShopMgmt-NodeJS/PetShopMgmt-NodeJS/
+
+
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R]
+
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_URI}.html [NC,L]
+
+AddType application/x-httpd-php5 .html .htm
+AddHandler application/x-httpd-php .html
+
+ErrorDocument 404 /PetShopMgmt-NodeJS/PetShopMgmt-NodeJS/index.html
